@@ -1,11 +1,6 @@
-module GameLogic where
+module Direction where
 
-import Types
-
-walkable :: Tile -> Bool
-walkable Floor = True
-walkable Door = True
-walkable Wall = False
+data Direction = North | South | East | West deriving (Eq, Show)
 
 dirVector :: Direction -> (Int, Int)
 dirVector East = (1, 0)
