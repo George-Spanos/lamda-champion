@@ -22,8 +22,8 @@ mkGameState dungeon playerPos = case Map.lookup playerPos dungeon of
   Just t | walkable t -> Just $ GameState dungeon playerPos
   _ -> Nothing
 
-initGame:: Int -> Int -> GameState
-initGame x y = fromJust $ mkGameState dungeon $ Coord x y 
+initGame:: GameState
+initGame = fromJust $ mkGameState dungeon $ Coord 5 5 
   where w = 80
         h = 24
         dungeon = mkDungeon w h
